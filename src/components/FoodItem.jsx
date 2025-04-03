@@ -1,4 +1,7 @@
 export function FoodItem({ foodItem }) {
+	const foodIngredients = foodItem.ingredients.split(",");
+	console.log(foodItem);
+
 	return (
 		<>
 			{
@@ -10,8 +13,8 @@ export function FoodItem({ foodItem }) {
 					</p>
 					<p className="text-gray-600 mt-2">{foodItem.description}</p>
 					<ul>
-						{foodItem.ingredients.map((ingredient, i) => (
-							<li>{ingredient}</li>
+						{foodIngredients.map((ingredient, i) => (
+							<li key={i}>{ingredient}</li>
 						))}
 					</ul>
 					<p>{foodItem.price}</p>
